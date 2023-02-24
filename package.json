@@ -1,0 +1,64 @@
+{
+  "name": "butterfly",
+  "version": "1.0.0",
+  "description": "butterfly",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "rm -rf dist/assets && MODE=development node esbuild.mjs",
+    "build": "rm -rf dist/assets && MODE=prodaction node esbuild.mjs",
+    "husky:setup": "rm -rf .husky && husky install && husky add .husky/pre-commit \"pnpm run lint:fix-staged\"",
+    "lint:fix-all": "eslint './src/**/*.ts' --fix && stylelint './src/**/*.scss' --fix",
+    "lint:fix-staged": "lint-staged",
+    "eslint": "eslint './src/**/*.ts'",
+    "format": "prettier './src/**/*.{ts,scss}' --write",
+    "style": "stylelint './src/**/*.scss' --fix"
+  },
+  "keywords": [],
+  "author": "WebDante",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "autoprefixer": "^10.4.13",
+    "esbuild": "^0.17.10",
+    "esbuild-css-modules-plugin": "^2.7.1",
+    "esbuild-style-plugin": "^1.6.1",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "stylelint": "^15.2.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-order": "^6.0.2",
+    "typescript": "^4.9.5"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint --quiet --fix"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 edge version"
+    ]
+  }
+}
