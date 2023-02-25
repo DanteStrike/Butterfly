@@ -1,0 +1,28 @@
+html,
+body {
+    background-color: aquamarine;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+
+    width: 1236px;
+    height: 100vh;
+    margin: 0 auto;
+
+    border: 1px solid black;
+    will-change: transform;
+}
+
+.around {
+    width: 1140px;
+    height: 72px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    border: 1px solid black;
+}

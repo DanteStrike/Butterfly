@@ -1,5 +1,8 @@
 module.exports = {
     root: true,
+    globals: {
+        __IS_DEVELOPMENT__: true,
+    },
     plugins: ['@typescript-eslint', 'import', 'prettier'],
     extends: [
         'airbnb-typescript/base',
